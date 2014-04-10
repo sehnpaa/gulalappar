@@ -9,14 +9,17 @@ $('#area1').resizable({grid: [20, 20]}).draggable({handle: 'div#handle1', grid: 
 
 var nextNote = 2;
 
-var areaTemplate =  '<div id="area' + nextNote + '" class="area" contenteditable>';
-areaTemplate +=         'mer text';
-areaTemplate +=         '<div id="handle' + nextNote + '" class="handle"></div>';
-areaTemplate +=         '<div class="radera" title="RADERA">&#9746</div>';
-areaTemplate +=     '</div>';
+function getAreaTemplate() {
+    var areaTemplate =  '<div id="area' + nextNote + '" class="area" contenteditable>';
+    areaTemplate +=         'mer text';
+    areaTemplate +=         '<div id="handle' + nextNote + '" class="handle"></div>';
+    areaTemplate +=         '<div class="radera" title="RADERA">&#9746</div>';
+    areaTemplate +=     '</div>';
+    return areaTemplate;
+}
 
 $('#btn_nyanteckning').on('click', function () {
-    $('body').append(areaTemplate);
+    $('body').append(getAreaTemplate());
     $('#area' + nextNote).resizable({grid: [20, 20]}).draggable({handle: 'div#handle' + nextNote, grid: [ 20, 20 ]});
     nextNote += 1;
 });
