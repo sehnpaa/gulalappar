@@ -1,4 +1,4 @@
-$('.area').on('paste input', function () {
+$('body').on('paste input', '.area', function () {
     console.log('Save');
     //console.log('Content: ' + $('#lapp1 p').text());
     //console.log('Left: ' + $('#lapp1').offset().left + ':');
